@@ -1,0 +1,937 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="SBY Bookkeeping Services — tax filing, tax advisory, financial statements, business registration, business retirement, and comprehensive payroll processing.">
+<title>SBY Bookkeeping Services</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+.brand{
+  display:flex;
+  align-items:center;
+}
+
+.brand-logo{
+  display:block;
+  width:auto;
+  height:70px;
+  object-fit:contain;
+}
+
+.footer-logo{
+  height:110px;
+}
+
+.testimonial-carousel{
+  width:100%;
+  max-width:850px;
+  margin:0 auto;
+}
+
+.testimonial-viewport{
+  width:100%;
+  overflow:hidden;
+  position:relative;
+}
+
+#testimonialList{
+  display:block !important;
+  width:100%;
+  position:relative;
+}
+
+#testimonialList .testimonial{
+  display:none !important;
+  width:100%;
+  margin:0 !important;
+}
+
+#testimonialList .testimonial.carousel-active{
+  display:block !important;
+}
+
+.testimonial-controls{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  margin-top:26px;
+}
+
+.testimonial-arrow{
+  width:42px;
+  height:42px;
+  border:1px solid rgba(0,0,0,.15);
+  border-radius:50%;
+  background:#fff;
+  color:#111;
+  font-size:20px;
+  line-height:1;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.2s ease;
+}
+
+.testimonial-arrow:hover{
+  transform:translateY(-2px);
+}
+
+.testimonial-dots{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+
+.testimonial-dot{
+  width:8px;
+  height:8px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  background:#c8c8c8;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+.testimonial-dot.active{
+  width:24px;
+  border-radius:10px;
+  background:#111;
+}
+
+.service-card{
+  overflow:hidden;
+}
+
+.service-icon{
+  width:58px;
+  height:58px;
+  margin-bottom:20px;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#edf5ff;
+  color:#0b4ea2;
+}
+
+.service-icon svg{
+  width:34px;
+  height:34px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2.2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.card.dark .service-icon{
+  background:#ffffff18;
+  color:#f47b20;
+}
+
+.service-card h3{
+  margin-top:8px;
+}
+
+.service-card p{
+  margin-bottom:0;
+}
+
+.inquiry-status{
+  display:block;
+  min-height:20px;
+  margin-top:8px;
+}
+
+.inquiry-status.success{
+  color:#16803c;
+}
+
+.inquiry-status.error{
+  color:#b42318;
+}
+
+.inquiry-frame{
+  display:none;
+  width:0;
+  height:0;
+  border:0;
+  position:absolute;
+  visibility:hidden;
+}
+
+@media(max-width:700px){
+  .brand-logo{
+    height:72px;
+  }
+
+  .footer-logo{
+    height:92px;
+  }
+
+  .testimonial-carousel{
+    max-width:100%;
+  }
+
+  .testimonial-controls{
+    margin-top:20px;
+  }
+}
+
+@media(max-width:850px){
+  .service-icon{
+    width:54px;
+    height:54px;
+  }
+}
+</style>
+</head>
+
+<body data-testimonials-api="https://script.google.com/macros/s/AKfycbwSuKIgPlbI1kB_P1WKuZWvZli1GIo9qEzWSCFmfZ-IOU78C-EzBqv2PUghfefSEGAD/exec">
+
+<header>
+<nav class="nav wrap">
+<a class="brand" href="#home">
+<img class="brand-logo" src="SBY%20Bookkeeping%20Services%20Logo.jpeg" alt="SBY Bookkeeping Services">
+</a>
+
+<button class="hamb" aria-label="Menu">☰</button>
+
+<div class="links">
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#about">About</a>
+<a href="#testimonials">Testimonials</a>
+<a href="#faq">FAQ</a>
+<a class="navbtn" href="#contact">Inquire Now</a>
+</div>
+</nav>
+</header>
+
+<main>
+
+<section id="home" class="hero">
+<div class="wrap hero-grid">
+
+<div>
+<div class="eyebrow">REMOTE BOOKKEEPING & ACCOUNTING SUPPORT</div>
+
+<h1>
+Professional bookkeeping.<br>
+<em>Simplified.</em>
+</h1>
+
+<p class="lead">
+Helping small businesses, professionals, and online sellers keep their records organized, their tax obligations on track, and their business requirements properly managed.
+</p>
+
+<div class="actions">
+<a class="btn primary" href="#contact">Get Started →</a>
+<a class="btn secondary" href="#services">Explore Services</a>
+</div>
+
+<div class="stats">
+<div>
+<b>100%</b>
+<span>Remote-ready</span>
+</div>
+
+<div>
+<b>Online</b>
+<span>Filekeeping</span>
+</div>
+
+<div>
+<b>6</b>
+<span>Core services</span>
+</div>
+</div>
+</div>
+
+<div class="dashboard">
+<div class="dash-top">
+<small>YOUR BUSINESS, IN ORDER</small>
+<i></i>
+</div>
+
+<h2>Financial clarity starts here.</h2>
+
+<div class="ledger">
+<div>
+<span>Tax filing</span>
+<b>On track</b>
+</div>
+
+<div>
+<span>Financial statements</span>
+<b>Ready</b>
+</div>
+
+<div>
+<span>Payroll</span>
+<b>Organized</b>
+</div>
+
+<div>
+<span>Business compliance</span>
+<b>Supported</b>
+</div>
+</div>
+
+<small>SBY BOOKKEEPING SERVICES</small>
+</div>
+
+</div>
+</section>
+
+<section class="intro section">
+<div class="wrap two">
+
+<div>
+<div class="eyebrow">WHY SBY</div>
+<h2>Your business deserves <span>organized numbers.</span></h2>
+</div>
+
+<p>
+SBY Bookkeeping Services provides convenient remote accounting support for businesses that need dependable tax, financial reporting, payroll, registration, and compliance assistance.
+</p>
+
+</div>
+</section>
+
+<section id="services" class="section light">
+<div class="wrap">
+
+<div class="heading">
+<div>
+<div class="eyebrow">WHAT WE DO</div>
+<h2>
+Services built around<br>
+<span>your business.</span>
+</h2>
+</div>
+
+<p>
+Practical accounting, tax, payroll, and business support designed to help entrepreneurs stay organized and focused on running their business.
+</p>
+</div>
+
+<div class="cards">
+
+<article class="card dark service-card">
+<div class="service-icon">
+<svg viewBox="0 0 64 64" aria-hidden="true">
+<rect x="17" y="8" width="30" height="46" rx="4"></rect>
+<path d="M25 18h14M25 27h14M25 36h7M25 45h14"></path>
+<path d="M43 39l5 5 9-11"></path>
+</svg>
+</div>
+<small>01</small>
+<h3>Tax Return Computation & Filing</h3>
+<p>
+Accurate preparation, computation, and timely filing of tax returns in compliance with BIR requirements.
+</p>
+</article>
+
+<article class="card service-card">
+<div class="service-icon">
+<svg viewBox="0 0 64 64" aria-hidden="true">
+<circle cx="32" cy="22" r="9"></circle>
+<path d="M17 50c1-9 7-14 15-14s14 5 15 14"></path>
+<path d="M45 13h8v18h-8z"></path>
+<path d="M49 17v10M46 20h6M46 24h6"></path>
+</svg>
+</div>
+<small>02</small>
+<h3>Tax Consultancy & Advisory</h3>
+<p>
+Practical tax guidance and advisory services to help businesses understand and manage their tax obligations.
+</p>
+</article>
+
+<article class="card service-card">
+<div class="service-icon">
+<svg viewBox="0 0 64 64" aria-hidden="true">
+<rect x="10" y="10" width="44" height="44" rx="5"></rect>
+<path d="M19 44V32M29 44V24M39 44V18M49 44V28"></path>
+<path d="M18 48h32"></path>
+</svg>
+</div>
+<small>03</small>
+<h3>Preparation of Financial Statements</h3>
+<p>
+Preparation of accurate and reliable financial statements for business monitoring, compliance, and decision-making.
+</p>
+</article>
+
+<article class="card service-card">
+<div class="service-icon">
+<svg viewBox="0 0 64 64" aria-hidden="true">
+<path d="M12 53h40"></path>
+<path d="M16 53V25l16-13 16 13v28"></path>
+<path d="M24 53V39h16v14"></path>
+<path d="M22 29h4M38 29h4M22 35h4M38 35h4"></path>
+</svg>
+</div>
+<small>04</small>
+<h3>Business Registration</h3>
+<p>
+Assistance with business registration and government compliance with SEC/DTI, LGU, BIR, SSS, PhilHealth, and Pag-IBIG.
+</p>
+</article>
+
+<article class="card service-card">
+<div class="service-icon">
+<svg viewBox="0 0 64 64" aria-hidden="true">
+<rect x="14" y="9" width="36" height="46" rx="4"></rect>
+<path d="M23 20h18M23 29h18M23 38h10"></path>
+<path d="M39 40l-9 9-5-5"></path>
+</svg>
+</div>
+<small>05</small>
+<h3>Business Retirement</h3>
+<p>
+Assistance with the proper closure and retirement of business registrations and related government requirements.
+</p>
+</article>
+
+<article class="card wide service-card">
+<div class="service-icon">
+<svg viewBox="0 0 64 64" aria-hidden="true">
+<rect x="9" y="15" width="46" height="35" rx="5"></rect>
+<path d="M9 25h46"></path>
+<circle cx="22" cy="36" r="6"></circle>
+<path d="M35 34h12M35 41h8"></path>
+<path d="M16 47h32"></path>
+</svg>
+</div>
+<small>06</small>
+<h3>Comprehensive Payroll Processing</h3>
+<p>
+Complete payroll processing, including employee payroll computation, statutory deductions, SSS, PhilHealth, and Pag-IBIG contribution payments, plus SSS and Pag-IBIG loan payments.
+</p>
+</article>
+
+</div>
+</div>
+</section>
+
+<section id="about" class="section">
+<div class="wrap about">
+
+<div class="about-visual">
+<strong>SBY</strong>
+<small>REMOTE ACCOUNTING SUPPORT</small>
+</div>
+
+<div>
+<div class="eyebrow">ABOUT SBY</div>
+
+<h2>
+Modern bookkeeping for the way <span>business works today.</span>
+</h2>
+
+<p>
+SBY Bookkeeping Services is a remote bookkeeping and accounting service led by <b>Sean Benedict Yangco</b>.
+</p>
+
+<p>
+We work with small businesses, professionals, and online sellers who need dependable tax support, financial statements, payroll processing, business registration assistance, business retirement support, and organized online filekeeping.
+</p>
+
+<ul>
+<li>
+<b>Remote-first</b>
+<span>Work with us without needing an in-person office visit.</span>
+</li>
+
+<li>
+<b>Organized records</b>
+<span>Keep important accounting files and documents easy to access.</span>
+</li>
+
+<li>
+<b>Practical support</b>
+<span>Services designed around the needs of growing businesses.</span>
+</li>
+</ul>
+
+</div>
+</div>
+</section>
+
+<section class="section dark-section">
+<div class="wrap">
+
+<div class="center">
+<div class="eyebrow">SIMPLE PROCESS</div>
+<h2>
+From inquiry to <span>organized business support.</span>
+</h2>
+</div>
+
+<div class="steps">
+
+<div>
+<b>01</b>
+<h3>Tell us about your business</h3>
+<p>
+Send an inquiry with your accounting, tax, payroll, or business support needs.
+</p>
+</div>
+
+<div>
+<b>02</b>
+<h3>Discuss your requirements</h3>
+<p>
+We'll learn about your records, business, employees, and support requirements.
+</p>
+</div>
+
+<div>
+<b>03</b>
+<h3>Get organized</h3>
+<p>
+Move forward with a practical accounting, tax, payroll, and document workflow.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="testimonials" class="section light">
+<div class="wrap">
+
+<div class="heading">
+<div>
+<div class="eyebrow">CLIENT TESTIMONIALS</div>
+<h2>
+What our clients <span>have to say.</span>
+</h2>
+</div>
+
+<a href="#testimonial-form" class="textlink">
+Share your experience →
+</a>
+</div>
+
+<div class="testimonial-carousel">
+
+<div class="testimonial-viewport">
+
+<div id="testimonialList" aria-live="polite">
+
+<article class="testimonial carousel-active">
+<b class="quote">“</b>
+<p>Loading approved client testimonials…</p>
+</article>
+
+<article class="testimonial dark">
+<b class="quote">+</b>
+<h3>Be our next success story.</h3>
+<p>
+Have worked with SBY? Share your experience and, with your permission, your testimonial can be featured here.
+</p>
+<a href="#testimonial-form">Submit a testimonial →</a>
+</article>
+
+</div>
+
+</div>
+
+<div class="testimonial-controls">
+
+<button type="button" class="testimonial-arrow" id="testimonialPrev" aria-label="Previous testimonial">‹</button>
+
+<div class="testimonial-dots" id="testimonialDots" aria-label="Testimonial navigation"></div>
+
+<button type="button" class="testimonial-arrow" id="testimonialNext" aria-label="Next testimonial">›</button>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="faq" class="section">
+<div class="wrap faq">
+
+<div>
+<div class="eyebrow">FAQ</div>
+<h2>
+Questions?<br>
+<span>Let's make it clear.</span>
+</h2>
+</div>
+
+<div>
+
+<details>
+<summary>Who do you provide services for?</summary>
+<p>
+SBY serves small businesses, professionals, and online sellers who need remote bookkeeping, accounting, tax, payroll, and business support.
+</p>
+</details>
+
+<details>
+<summary>Can everything be handled remotely?</summary>
+<p>
+SBY is designed around remote workflows, including online communication and online filekeeping.
+</p>
+</details>
+
+<details>
+<summary>What services do you provide?</summary>
+<p>
+SBY provides tax return computation and filing, tax consultancy and advisory, financial statement preparation, business registration, business retirement, and comprehensive payroll processing.
+</p>
+</details>
+
+<details>
+<summary>Can I inquire before deciding?</summary>
+<p>
+Yes. Use the inquiry form to describe your needs and we'll use your information to start the conversation.
+</p>
+</details>
+
+<details>
+<summary>Can clients submit testimonials?</summary>
+<p>
+Yes. Testimonial submissions are sent to SBY for review before publication.
+</p>
+</details>
+
+</div>
+</div>
+</section>
+
+<section id="contact" class="contact section">
+<div class="wrap contact-grid">
+
+<div>
+<div class="eyebrow orange">LET'S TALK</div>
+
+<h2>
+Ready to get your business <em>in order?</em>
+</h2>
+
+<p>
+Tell us what your business needs. Submit an inquiry and we'll get back to you through email.
+</p>
+
+<div class="contact-info">
+<a href="mailto:sbyacctg@gmail.com">sbyacctg@gmail.com</a>
+<a href="tel:+639663529089">0966 352 9089</a>
+</div>
+</div>
+
+<form id="inquiryForm" method="POST" target="inquiryFrame" novalidate>
+
+<label>
+Full name
+<input name="name" required>
+</label>
+
+<label>
+Business name
+<input name="business">
+</label>
+
+<label>
+Email address
+<input name="email" type="email" required>
+</label>
+
+<label>
+Contact No.
+<input name="contact" type="tel" autocomplete="tel">
+</label>
+
+<label>
+Services needed
+<select name="service" required>
+<option value="" disabled selected>Select a service</option>
+<option>Tax Return Computation & Filing</option>
+<option>Tax Consultancy & Advisory</option>
+<option>Preparation of Financial Statements</option>
+<option>Business Registration</option>
+<option>Business Retirement</option>
+<option>Comprehensive Payroll Processing</option>
+<option>Multiple services</option>
+<option>Not sure yet</option>
+</select>
+</label>
+
+<label>
+Message
+<textarea name="message" rows="5" required></textarea>
+</label>
+
+<button class="btn orange-btn" type="submit">
+Send Inquiry →
+</button>
+
+<small id="inquiryStatus" class="inquiry-status" role="status" aria-live="polite"></small>
+
+</form>
+
+<iframe name="inquiryFrame" id="inquiryFrame" class="inquiry-frame" title="Inquiry submission"></iframe>
+
+</div>
+</section>
+
+<section id="testimonial-form" class="section light">
+<div class="wrap contact-grid">
+
+<div>
+<div class="eyebrow">FOR EXISTING CLIENTS</div>
+
+<h2>
+Share your <span>experience.</span>
+</h2>
+
+<p>
+Thank you for your feedback. Submit your testimonial below. It will be sent to SBY for review before publication.
+</p>
+</div>
+
+<form id="testimonialForm" novalidate>
+
+<label>
+Name
+<input name="client_name" required>
+</label>
+
+<label>
+Business / role
+<input name="client_business">
+</label>
+
+<label>
+Email
+<input name="client_email" type="email" required>
+</label>
+
+<label>
+Your testimonial
+<textarea name="testimonial" rows="6" required></textarea>
+</label>
+
+<label class="check">
+<input type="checkbox" name="permission" value="I give permission for SBY Bookkeeping Services to publish this testimonial on its website." required>
+<span>
+I give permission for SBY Bookkeeping Services to publish this testimonial on its website.
+</span>
+</label>
+
+<button class="btn primary" type="submit">
+Submit Testimonial →
+</button>
+
+<small id="testimonialStatus" role="status" aria-live="polite"></small>
+
+</form>
+</div>
+</section>
+
+</main>
+
+<footer>
+
+<div class="wrap foot">
+
+<div>
+<a class="brand" href="#home">
+<img class="brand-logo footer-logo" src="SBY%20Bookkeeping%20Services%20Logo.jpeg" alt="SBY Bookkeeping Services">
+</a>
+
+<p>
+Remote bookkeeping and accounting support for modern businesses.
+</p>
+</div>
+
+<div>
+<a href="#services">Services</a>
+<a href="#about">About</a>
+<a href="#testimonials">Testimonials</a>
+<a href="#contact">Contact</a>
+</div>
+
+<div>
+<a href="mailto:sbyacctg@gmail.com">sbyacctg@gmail.com</a>
+<a href="tel:+639663529089">0966 352 9089</a>
+</div>
+
+</div>
+
+<div class="wrap copyright">
+© <span id="year"></span> SBY Bookkeeping Services. All rights reserved.
+</div>
+
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+(function(){
+  const list = document.getElementById('testimonialList');
+  const prev = document.getElementById('testimonialPrev');
+  const next = document.getElementById('testimonialNext');
+  const dots = document.getElementById('testimonialDots');
+
+  if(list && prev && next && dots){
+    let current = 0;
+    let timer = null;
+
+    function getSlides(){
+      return Array.from(list.querySelectorAll('.testimonial'));
+    }
+
+    function render(){
+      const slides = getSlides();
+
+      if(!slides.length) return;
+
+      current = Math.max(0, Math.min(current, slides.length - 1));
+
+      slides.forEach((slide,index)=>{
+        slide.classList.toggle('carousel-active',index === current);
+      });
+
+      dots.innerHTML = slides.map((slide,index)=>{
+        return '<button type="button" class="testimonial-dot' +
+          (index === current ? ' active' : '') +
+          '" aria-label="Go to testimonial ' + (index + 1) +
+          '" data-index="' + index + '"></button>';
+      }).join('');
+
+      dots.querySelectorAll('.testimonial-dot').forEach(dot=>{
+        dot.addEventListener('click',()=>{
+          current = Number(dot.dataset.index);
+          render();
+          restart();
+        });
+      });
+
+      const multiple = slides.length > 1;
+
+      prev.style.display = multiple ? 'flex' : 'none';
+      next.style.display = multiple ? 'flex' : 'none';
+      dots.style.display = multiple ? 'flex' : 'none';
+    }
+
+    function move(direction){
+      const slides = getSlides();
+
+      if(slides.length < 2) return;
+
+      current = (current + direction + slides.length) % slides.length;
+      render();
+      restart();
+    }
+
+    function restart(){
+      clearInterval(timer);
+
+      if(getSlides().length > 1){
+        timer = setInterval(()=>{
+          current = (current + 1) % getSlides().length;
+          render();
+        },6000);
+      }
+    }
+
+    prev.addEventListener('click',()=>move(-1));
+    next.addEventListener('click',()=>move(1));
+
+    new MutationObserver(()=>{
+      current = 0;
+      render();
+      restart();
+    }).observe(list,{childList:true,subtree:true});
+
+    render();
+    restart();
+  }
+})();
+
+(function(){
+  const form = document.getElementById('inquiryForm');
+  const frame = document.getElementById('inquiryFrame');
+  const status = document.getElementById('inquiryStatus');
+  const api = 'https://script.google.com/macros/s/AKfycbxuv0zOPHt0QGkMnnLwlrZKf9N5ohg_OpD7lM_8LftOWdA8cLwxzV3LRrydI40MQRSC/exec';
+
+  if(!form || !frame || !status) return;
+
+  form.action = api;
+
+  let submitting = false;
+  let timeout = null;
+
+  form.addEventListener('submit',function(e){
+    if(submitting){
+      e.preventDefault();
+      return;
+    }
+
+    if(!form.checkValidity()){
+      e.preventDefault();
+      form.reportValidity();
+      return;
+    }
+
+    const button = form.querySelector('button[type="submit"]');
+
+    submitting = true;
+    button.disabled = true;
+    button.textContent = 'Sending...';
+    status.className = 'inquiry-status';
+    status.textContent = '';
+
+    clearTimeout(timeout);
+
+    timeout = setTimeout(function(){
+      if(!submitting) return;
+
+      submitting = false;
+      button.disabled = false;
+      button.textContent = 'Send Inquiry →';
+      status.className = 'inquiry-status error';
+      status.textContent = 'Unable to confirm your inquiry. Please try again or contact us directly.';
+    },10000);
+  });
+
+  frame.addEventListener('load',function(){
+    if(!submitting) return;
+
+    clearTimeout(timeout);
+
+    setTimeout(function(){
+      submitting = false;
+
+      const button = form.querySelector('button[type="submit"]');
+
+      form.reset();
+      button.disabled = false;
+      button.textContent = 'Send Inquiry →';
+
+      status.className = 'inquiry-status success';
+      status.textContent = 'Thank you. Your inquiry has been submitted successfully.';
+    },500);
+  });
+})();
+</script>
+
+</body>
+</html>
