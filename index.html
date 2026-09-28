@@ -194,6 +194,124 @@
     height:54px;
   }
 }
+
+.government-section{
+  background:#f7f9fc;
+}
+
+.government-agencies{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:14px;
+  margin-top:34px;
+}
+
+.government-agency{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-height:82px;
+  padding:16px;
+  background:#fff;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:16px;
+  box-shadow:0 8px 24px rgba(0,0,0,.04);
+}
+
+.government-agency-logo{
+  width:52px;
+  height:52px;
+  flex:0 0 52px;
+  object-fit:contain;
+  display:block;
+}
+
+.government-agency-name{
+  font-weight:700;
+  line-height:1.25;
+}
+
+.government-tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:34px;
+}
+
+.government-tab{
+  border:1px solid rgba(0,0,0,.12);
+  background:#fff;
+  color:#111;
+  padding:10px 15px;
+  border-radius:999px;
+  cursor:pointer;
+  font:inherit;
+  font-weight:600;
+}
+
+.government-tab.active{
+  background:#111;
+  color:#fff;
+  border-color:#111;
+}
+
+.government-panel{
+  margin-top:22px;
+}
+
+.government-list{
+  display:grid;
+  gap:12px;
+}
+
+.government-item{
+  background:#fff;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:16px;
+  padding:18px 20px;
+}
+
+.government-item-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.government-item h3{
+  margin:0 0 6px;
+}
+
+.government-item p{
+  margin:0 0 8px;
+}
+
+.government-meta{
+  font-size:.9rem;
+  opacity:.72;
+}
+
+.government-link{
+  display:inline-block;
+  margin-top:10px;
+  font-weight:700;
+}
+
+@media(max-width:900px){
+  .government-agencies{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:560px){
+  .government-agencies{
+    grid-template-columns:1fr;
+  }
+
+  .government-item-top{
+    display:block;
+  }
+}
 </style>
 </head>
 
@@ -213,6 +331,7 @@
 <a href="#about">About</a>
 <a href="#testimonials">Testimonials</a>
 <a href="#faq">FAQ</a>
+<a href="#government">Government Compliance</a>
 <a class="navbtn" href="#contact">Inquire Now</a>
 </div>
 </nav>
@@ -616,6 +735,28 @@ Yes. Testimonial submissions are sent to SBY for review before publication.
 </div>
 </section>
 
+
+<section id="government" class="section government-section">
+<div class="wrap">
+
+<div class="heading">
+<div>
+<div class="eyebrow">GOVERNMENT COMPLIANCE</div>
+<h2>Government requirements,<br><span>organized in one place.</span></h2>
+</div>
+
+<p>
+Access current government compliance information maintained through the SBY Government Compliance database.
+</p>
+</div>
+
+<div id="governmentAgencies" class="government-agencies"></div>
+<div id="governmentTabs" class="government-tabs"></div>
+<div id="governmentPanels" class="government-panel"></div>
+
+</div>
+</section>
+
 <section id="contact" class="contact section">
 <div class="wrap contact-grid">
 
@@ -931,6 +1072,95 @@ Remote bookkeeping and accounting support for modern businesses.
     },500);
   });
 })();
+(function(){
+  const api = 'https://script.google.com/macros/s/AKfycbwUAu9vc-vp0KIzSZA125Z_iWYWC95-wmJCJWj1vtMzzDfErvSTAyE2HibXudR57A7Y/exec';
+  const agencies = document.getElementById('governmentAgencies');
+  const tabs = document.getElementById('governmentTabs');
+  const panels = document.getElementById('governmentPanels');
+
+  if(!agencies || !tabs || !panels) return;
+
+  const order = ['Government','BIR Deadlines','BIR RRs','BIR RMCs','BIR RMOs','Tax Tables','SSS','Pag-IBIG','PhilHealth','SEC'];
+  let data = {};
+  let current = 'BIR Deadlines';
+
+  function escapeHtml(value){
+    return String(value ?? '').replace(/[&<>"']/g,function(char){
+      return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[char]);
+    });
+  }
+
+  function linkHtml(url,label){
+    const value = String(url ?? '').trim();
+    if(!value) return '';
+    return '<a class="government-link" href="'+escapeHtml(value)+'" target="_blank" rel="noopener">'+escapeHtml(label || 'View official source')+' →</a>';
+  }
+
+  function dateText(value){
+    if(!value) return '';
+    const d = new Date(value);
+    if(Number.isNaN(d.getTime())) return escapeHtml(value);
+    return escapeHtml(d.toLocaleDateString('en-PH',{year:'numeric',month:'long',day:'numeric'}));
+  }
+
+  function renderAgencies(){
+    const rows = Array.isArray(data.Government) ? data.Government : [];
+    agencies.innerHTML = rows.map(row=>{
+      const logo = String(row['LOGO URL'] || '').trim();
+      const name = row.AGENCY || row.TITLE || '';
+      return '<div class="government-agency">' +
+        (logo ? '<img class="government-agency-logo" src="'+escapeHtml(logo)+'" alt="'+escapeHtml(name)+' logo" loading="lazy">' : '') +
+        '<div class="government-agency-name">'+escapeHtml(name)+'</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  function renderRow(sheet,row){
+    if(sheet === 'BIR Deadlines'){
+      return '<article class="government-item"><div class="government-item-top"><div><h3>'+escapeHtml(row.FORM || row.TITLE || '')+'</h3><p>'+escapeHtml(row.DESCRIPTION || '')+'</p><div class="government-meta">'+escapeHtml(row.PERIOD || '')+(row['DUE DATE'] ? ' · Due '+dateText(row['DUE DATE']) : '')+(row.FREQUENCY ? ' · '+escapeHtml(row.FREQUENCY) : '')+'</div></div></div>'+linkHtml(row.URL,'Official source')+'</article>';
+    }
+
+    if(['BIR RRs','BIR RMCs','BIR RMOs'].includes(sheet)){
+      return '<article class="government-item"><h3>'+escapeHtml(row.ISSUANCE || '')+'</h3><p><strong>'+escapeHtml(row.TITLE || '')+'</strong></p><p>'+escapeHtml(row.DESCRIPTION || '')+'</p><div class="government-meta">'+dateText(row.DATE)+'</div>'+linkHtml(row.URL,'Read issuance')+'</article>';
+    }
+
+    return '<article class="government-item"><h3>'+escapeHtml(row.TITLE || '')+'</h3><p>'+escapeHtml(row.DESCRIPTION || '')+'</p><div class="government-meta">'+escapeHtml(row.CATEGORY || row['TAX TYPE'] || '')+(row['EFFECTIVE DATE'] ? ' · Effective '+dateText(row['EFFECTIVE DATE']) : '')+(row['DUE DATE'] ? ' · Due '+dateText(row['DUE DATE']) : '')+'</div>'+linkHtml(row.URL,'Official source')+'</article>';
+  }
+
+  function renderPanels(){
+    const rows = Array.isArray(data[current]) ? data[current] : [];
+    panels.innerHTML = '<div class="government-list">'+(rows.length ? rows.map(row=>renderRow(current,row)).join('') : '<article class="government-item"><p>No active records available.</p></article>')+'</div>';
+  }
+
+  function renderTabs(){
+    const available = order.filter(name=>name !== 'Government' && Array.isArray(data[name]));
+    tabs.innerHTML = available.map(name=>'<button type="button" class="government-tab'+(name===current?' active':'')+'" data-government-tab="'+escapeHtml(name)+'">'+escapeHtml(name)+'</button>').join('');
+    tabs.querySelectorAll('[data-government-tab]').forEach(button=>{
+      button.addEventListener('click',function(){
+        current = this.dataset.governmentTab;
+        tabs.querySelectorAll('.government-tab').forEach(item=>item.classList.remove('active'));
+        this.classList.add('active');
+        renderPanels();
+      });
+    });
+  }
+
+  fetch(api,{cache:'no-store'})
+    .then(response=>response.json())
+    .then(result=>{
+      if(!result || !result.success) throw new Error('Government data unavailable');
+      data = result.data || {};
+      renderAgencies();
+      renderTabs();
+      renderPanels();
+    })
+    .catch(()=>{
+      agencies.innerHTML = '';
+      tabs.innerHTML = '';
+      panels.innerHTML = '<article class="government-item"><p>Government compliance information is temporarily unavailable.</p></article>';
+    });
+})();
+
 </script>
 
 </body>
