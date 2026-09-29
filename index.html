@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -13,323 +12,47 @@
 <link rel="stylesheet" href="styles.css">
 
 <style>
-.brand{
-  display:flex;
-  align-items:center;
-}
+.brand{display:flex;align-items:center}
+.brand-logo{display:block;width:auto;height:70px;object-fit:contain}
+.footer-logo{height:110px}
 
-.brand-logo{
-  display:block;
-  width:auto;
-  height:70px;
-  object-fit:contain;
-}
+.testimonial-carousel{width:100%;max-width:850px;margin:0 auto}
+.testimonial-viewport{width:100%;overflow:hidden;position:relative}
+#testimonialList{display:block!important;width:100%;position:relative}
+#testimonialList .testimonial{display:none!important;width:100%;margin:0!important}
+#testimonialList .testimonial.carousel-active{display:block!important}
 
-.footer-logo{
-  height:110px;
-}
+.testimonial-controls{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:26px}
+.testimonial-arrow{width:42px;height:42px;border:1px solid rgba(0,0,0,.15);border-radius:50%;background:#fff;color:#111;font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s ease}
+.testimonial-arrow:hover{transform:translateY(-2px)}
+.testimonial-dots{display:flex;align-items:center;justify-content:center;gap:8px}
+.testimonial-dot{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:#c8c8c8;cursor:pointer;transition:.2s ease}
+.testimonial-dot.active{width:24px;border-radius:10px;background:#111}
 
-.testimonial-carousel{
-  width:100%;
-  max-width:850px;
-  margin:0 auto;
-}
+.service-card{overflow:hidden}
+.service-icon{width:58px;height:58px;margin-bottom:20px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:#edf5ff;color:#0b4ea2}
+.service-icon svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.card.dark .service-icon{background:#ffffff18;color:#f47b20}
+.service-card h3{margin-top:8px}
+.service-card p{margin-bottom:0}
 
-.testimonial-viewport{
-  width:100%;
-  overflow:hidden;
-  position:relative;
-}
+.inquiry-status{display:block;min-height:20px;margin-top:8px}
+.inquiry-status.success{color:#16803c}
+.inquiry-status.error{color:#b42318}
 
-#testimonialList{
-  display:block !important;
-  width:100%;
-  position:relative;
-}
+.inquiry-frame{display:none;width:0;height:0;border:0;position:absolute;visibility:hidden}
 
-#testimonialList .testimonial{
-  display:none !important;
-  width:100%;
-  margin:0 !important;
-}
-
-#testimonialList .testimonial.carousel-active{
-  display:block !important;
-}
-
-.testimonial-controls{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:18px;
-  margin-top:26px;
-}
-
-.testimonial-arrow{
-  width:42px;
-  height:42px;
-  border:1px solid rgba(0,0,0,.15);
-  border-radius:50%;
-  background:#fff;
-  color:#111;
-  font-size:20px;
-  line-height:1;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transition:.2s ease;
-}
-
-.testimonial-arrow:hover{
-  transform:translateY(-2px);
-}
-
-.testimonial-dots{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-}
-
-.testimonial-dot{
-  width:8px;
-  height:8px;
-  padding:0;
-  border:0;
-  border-radius:50%;
-  background:#c8c8c8;
-  cursor:pointer;
-  transition:.2s ease;
-}
-
-.testimonial-dot.active{
-  width:24px;
-  border-radius:10px;
-  background:#111;
-}
-
-.service-card{
-  overflow:hidden;
-}
-
-.service-icon{
-  width:58px;
-  height:58px;
-  margin-bottom:20px;
-  border-radius:16px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#edf5ff;
-  color:#0b4ea2;
-}
-
-.service-icon svg{
-  width:34px;
-  height:34px;
-  fill:none;
-  stroke:currentColor;
-  stroke-width:2.2;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-
-.card.dark .service-icon{
-  background:#ffffff18;
-  color:#f47b20;
-}
-
-.service-card h3{
-  margin-top:8px;
-}
-
-.service-card p{
-  margin-bottom:0;
-}
-
-.inquiry-status{
-  display:block;
-  min-height:20px;
-  margin-top:8px;
-}
-
-.inquiry-status.success{
-  color:#16803c;
-}
-
-.inquiry-status.error{
-  color:#b42318;
-}
-
-.inquiry-frame{
-  display:none;
-  width:0;
-  height:0;
-  border:0;
-  position:absolute;
-  visibility:hidden;
-}
-
-.government-section{
-  background:#f7f9fc;
-}
-
-.government-agencies{
-  display:grid;
-  grid-template-columns:repeat(5,minmax(0,1fr));
-  gap:14px;
-  margin-top:34px;
-}
-
-.government-agency{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  min-height:82px;
-  padding:16px;
-  background:#fff;
-  border:1px solid rgba(0,0,0,.08);
-  border-radius:16px;
-  box-shadow:0 8px 24px rgba(0,0,0,.04);
-}
-
-.government-agency-logo{
-  width:52px;
-  height:52px;
-  flex:0 0 52px;
-  object-fit:contain;
-  display:block;
-}
-
-.government-agency-name{
-  font-weight:700;
-  line-height:1.25;
-}
-
-.government-tabs{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-top:34px;
-}
-
-.government-tab{
-  border:1px solid rgba(0,0,0,.12);
-  background:#fff;
-  color:#111;
-  padding:10px 15px;
-  border-radius:999px;
-  cursor:pointer;
-  font:inherit;
-  font-weight:600;
-}
-
-.government-tab.active{
-  background:#111;
-  color:#fff;
-  border-color:#111;
-}
-
-.government-panel{
-  margin-top:22px;
-}
-
-.government-list{
-  display:grid;
-  gap:12px;
-}
-
-.government-item{
-  background:#fff;
-  border:1px solid rgba(0,0,0,.08);
-  border-radius:16px;
-  padding:18px 20px;
-}
-
-.government-item-top{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:20px;
-}
-
-.government-item h3{
-  margin:0 0 6px;
-}
-
-.government-item p{
-  margin:0 0 8px;
-}
-
-.government-meta{
-  font-size:.9rem;
-  opacity:.72;
-}
-
-.government-link{
-  display:inline-block;
-  margin-top:10px;
-  font-weight:700;
-}
-
-.government-loading{
-  grid-column:1/-1;
-  padding:24px;
-  text-align:center;
-  opacity:.7;
-}
-
-.government-error{
-  padding:20px;
-  background:#fff;
-  border:1px solid rgba(180,35,24,.15);
-  border-radius:16px;
-  color:#b42318;
-}
-
-@media(max-width:900px){
-  .government-agencies{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
+@media(max-width:850px){
+  .service-icon{width:54px;height:54px}
 }
 
 @media(max-width:700px){
-  .brand-logo{
-    height:72px;
-  }
-
-  .footer-logo{
-    height:92px;
-  }
-
-  .testimonial-carousel{
-    max-width:100%;
-  }
-
-  .testimonial-controls{
-    margin-top:20px;
-  }
-}
-
-@media(max-width:560px){
-  .government-agencies{
-    grid-template-columns:1fr;
-  }
-
-  .government-item-top{
-    display:block;
-  }
-}
-
-@media(max-width:850px){
-  .service-icon{
-    width:54px;
-    height:54px;
-  }
+  .brand-logo{height:72px}
+  .footer-logo{height:92px}
+  .testimonial-carousel{max-width:100%}
+  .testimonial-controls{margin-top:20px}
 }
 </style>
-
 </head>
 
 <body data-testimonials-api="https://script.google.com/macros/s/AKfycbwSuKIgPlbI1kB_P1WKuZWvZli1GIo9qEzWSCFmfZ-IOU78C-EzBqv2PUghfefSEGAD/exec">
@@ -339,16 +62,13 @@
 <a class="brand" href="#home">
 <img class="brand-logo" src="SBY%20Bookkeeping%20Services%20Logo.jpeg" alt="SBY Bookkeeping Services">
 </a>
-
 <button class="hamb" aria-label="Menu">☰</button>
-
 <div class="links">
 <a href="#home">Home</a>
 <a href="#services">Services</a>
 <a href="#about">About</a>
 <a href="#testimonials">Testimonials</a>
 <a href="#faq">FAQ</a>
-<a href="#government">Government Compliance</a>
 <a class="navbtn" href="#contact">Inquire Now</a>
 </div>
 </nav>
@@ -358,109 +78,53 @@
 
 <section id="home" class="hero">
 <div class="wrap hero-grid">
-
 <div>
 <div class="eyebrow">REMOTE BOOKKEEPING & ACCOUNTING SUPPORT</div>
-
-<h1>
-Professional bookkeeping.<br>
-<em>Simplified.</em>
-</h1>
-
-<p class="lead">
-Helping small businesses, professionals, and online sellers keep their records organized, their tax obligations on track, and their business requirements properly managed.
-</p>
-
+<h1>Professional bookkeeping.<br><em>Simplified.</em></h1>
+<p class="lead">Helping small businesses, professionals, and online sellers keep their records organized, their tax obligations on track, and their business requirements properly managed.</p>
 <div class="actions">
 <a class="btn primary" href="#contact">Get Started →</a>
 <a class="btn secondary" href="#services">Explore Services</a>
 </div>
-
 <div class="stats">
-<div>
-<b>100%</b>
-<span>Remote-ready</span>
-</div>
-
-<div>
-<b>Online</b>
-<span>Filekeeping</span>
-</div>
-
-<div>
-<b>6</b>
-<span>Core services</span>
-</div>
+<div><b>100%</b><span>Remote-ready</span></div>
+<div><b>Online</b><span>Filekeeping</span></div>
+<div><b>6</b><span>Core services</span></div>
 </div>
 </div>
 
 <div class="dashboard">
-<div class="dash-top">
-<small>YOUR BUSINESS, IN ORDER</small>
-<i></i>
-</div>
-
+<div class="dash-top"><small>YOUR BUSINESS, IN ORDER</small><i></i></div>
 <h2>Financial clarity starts here.</h2>
-
 <div class="ledger">
-<div>
-<span>Tax filing</span>
-<b>On track</b>
+<div><span>Tax filing</span><b>On track</b></div>
+<div><span>Financial statements</span><b>Ready</b></div>
+<div><span>Payroll</span><b>Organized</b></div>
+<div><span>Business compliance</span><b>Supported</b></div>
 </div>
-
-<div>
-<span>Financial statements</span>
-<b>Ready</b>
-</div>
-
-<div>
-<span>Payroll</span>
-<b>Organized</b>
-</div>
-
-<div>
-<span>Business compliance</span>
-<b>Supported</b>
-</div>
-</div>
-
 <small>SBY BOOKKEEPING SERVICES</small>
-
 </div>
-
 </div>
 </section>
 
 <section class="intro section">
 <div class="wrap two">
-
 <div>
 <div class="eyebrow">WHY SBY</div>
 <h2>Your business deserves <span>organized numbers.</span></h2>
 </div>
-
-<p>
-SBY Bookkeeping Services provides convenient remote accounting support for businesses that need dependable tax, financial reporting, payroll, registration, and compliance assistance.
-</p>
-
+<p>SBY Bookkeeping Services provides convenient remote accounting support for businesses that need dependable tax, financial reporting, payroll, registration, and compliance assistance.</p>
 </div>
 </section>
 
 <section id="services" class="section light">
 <div class="wrap">
-
 <div class="heading">
 <div>
 <div class="eyebrow">WHAT WE DO</div>
-<h2>
-Services built around<br>
-<span>your business.</span>
-</h2>
+<h2>Services built around<br><span>your business.</span></h2>
 </div>
-
-<p>
-Practical accounting, tax, payroll, and business support designed to help entrepreneurs stay organized and focused on running their business.
-</p>
+<p>Practical accounting, tax, payroll, and business support designed to help entrepreneurs stay organized and focused on running their business.</p>
 </div>
 
 <div class="cards">
@@ -475,9 +139,7 @@ Practical accounting, tax, payroll, and business support designed to help entrep
 </div>
 <small>01</small>
 <h3>Tax Return Computation & Filing</h3>
-<p>
-Accurate preparation, computation, and timely filing of tax returns in compliance with BIR requirements.
-</p>
+<p>Accurate preparation, computation, and timely filing of tax returns in compliance with BIR requirements.</p>
 </article>
 
 <article class="card service-card">
@@ -491,9 +153,7 @@ Accurate preparation, computation, and timely filing of tax returns in complianc
 </div>
 <small>02</small>
 <h3>Tax Consultancy & Advisory</h3>
-<p>
-Practical tax guidance and advisory services to help businesses understand and manage their tax obligations.
-</p>
+<p>Practical tax guidance and advisory services to help businesses understand and manage their tax obligations.</p>
 </article>
 
 <article class="card service-card">
@@ -506,9 +166,7 @@ Practical tax guidance and advisory services to help businesses understand and m
 </div>
 <small>03</small>
 <h3>Preparation of Financial Statements</h3>
-<p>
-Preparation of accurate and reliable financial statements for business monitoring, compliance, and decision-making.
-</p>
+<p>Preparation of accurate and reliable financial statements for business monitoring, compliance, and decision-making.</p>
 </article>
 
 <article class="card service-card">
@@ -522,9 +180,7 @@ Preparation of accurate and reliable financial statements for business monitorin
 </div>
 <small>04</small>
 <h3>Business Registration</h3>
-<p>
-Assistance with business registration and government compliance with SEC/DTI, LGU, BIR, SSS, PhilHealth, and Pag-IBIG.
-</p>
+<p>Assistance with business registration and government compliance with SEC/DTI, LGU, BIR, SSS, PhilHealth, and Pag-IBIG.</p>
 </article>
 
 <article class="card service-card">
@@ -537,9 +193,7 @@ Assistance with business registration and government compliance with SEC/DTI, LG
 </div>
 <small>05</small>
 <h3>Business Retirement</h3>
-<p>
-Assistance with the proper closure and retirement of business registrations and related government requirements.
-</p>
+<p>Assistance with the proper closure and retirement of business registrations and related government requirements.</p>
 </article>
 
 <article class="card wide service-card">
@@ -554,9 +208,7 @@ Assistance with the proper closure and retirement of business registrations and 
 </div>
 <small>06</small>
 <h3>Comprehensive Payroll Processing</h3>
-<p>
-Complete payroll processing, including employee payroll computation, statutory deductions, SSS, PhilHealth, and Pag-IBIG contribution payments, plus SSS and Pag-IBIG loan payments.
-</p>
+<p>Complete payroll processing, including employee payroll computation, statutory deductions, SSS, PhilHealth, and Pag-IBIG contribution payments, plus SSS and Pag-IBIG loan payments.</p>
 </article>
 
 </div>
@@ -573,76 +225,32 @@ Complete payroll processing, including employee payroll computation, statutory d
 
 <div>
 <div class="eyebrow">ABOUT SBY</div>
+<h2>Modern bookkeeping for the way <span>business works today.</span></h2>
 
-<h2>
-Modern bookkeeping for the way <span>business works today.</span>
-</h2>
+<p>SBY Bookkeeping Services is a remote bookkeeping and accounting service led by <b>Sean Benedict Yangco</b>.</p>
 
-<p>
-SBY Bookkeeping Services is a remote bookkeeping and accounting service led by <b>Sean Benedict Yangco</b>.
-</p>
-
-<p>
-We work with small businesses, professionals, and online sellers who need dependable tax support, financial statements, payroll processing, business registration assistance, business retirement support, and organized online filekeeping.
-</p>
+<p>We work with small businesses, professionals, and online sellers who need dependable tax support, financial statements, payroll processing, business registration assistance, business retirement support, and organized online filekeeping.</p>
 
 <ul>
-<li>
-<b>Remote-first</b>
-<span>Work with us without needing an in-person office visit.</span>
-</li>
-
-<li>
-<b>Organized records</b>
-<span>Keep important accounting files and documents easy to access.</span>
-</li>
-
-<li>
-<b>Practical support</b>
-<span>Services designed around the needs of growing businesses.</span>
-</li>
+<li><b>Remote-first</b><span>Work with us without needing an in-person office visit.</span></li>
+<li><b>Organized records</b><span>Keep important accounting files and documents easy to access.</span></li>
+<li><b>Practical support</b><span>Services designed around the needs of growing businesses.</span></li>
 </ul>
-
 </div>
 </div>
 </section>
 
 <section class="section dark-section">
 <div class="wrap">
-
 <div class="center">
 <div class="eyebrow">SIMPLE PROCESS</div>
-<h2>
-From inquiry to <span>organized business support.</span>
-</h2>
+<h2>From inquiry to <span>organized business support.</span></h2>
 </div>
 
 <div class="steps">
-
-<div>
-<b>01</b>
-<h3>Tell us about your business</h3>
-<p>
-Send an inquiry with your accounting, tax, payroll, or business support needs.
-</p>
-</div>
-
-<div>
-<b>02</b>
-<h3>Discuss your requirements</h3>
-<p>
-We'll learn about your records, business, employees, and support requirements.
-</p>
-</div>
-
-<div>
-<b>03</b>
-<h3>Get organized</h3>
-<p>
-Move forward with a practical accounting, tax, payroll, and document workflow.
-</p>
-</div>
-
+<div><b>01</b><h3>Tell us about your business</h3><p>Send an inquiry with your accounting, tax, payroll, or business support needs.</p></div>
+<div><b>02</b><h3>Discuss your requirements</h3><p>We'll learn about your records, business, employees, and support requirements.</p></div>
+<div><b>03</b><h3>Get organized</h3><p>Move forward with a practical accounting, tax, payroll, and document workflow.</p></div>
 </div>
 </div>
 </section>
@@ -653,22 +261,14 @@ Move forward with a practical accounting, tax, payroll, and document workflow.
 <div class="heading">
 <div>
 <div class="eyebrow">CLIENT TESTIMONIALS</div>
-<h2>
-What our clients <span>have to say.</span>
-</h2>
+<h2>What our clients <span>have to say.</span></h2>
 </div>
-
-<a href="#testimonial-form" class="textlink">
-Share your experience →
-</a>
+<a href="#testimonial-form" class="textlink">Share your experience →</a>
 </div>
 
 <div class="testimonial-carousel">
-
 <div class="testimonial-viewport">
-
 <div id="testimonialList" aria-live="polite">
-
 <article class="testimonial carousel-active">
 <b class="quote">“</b>
 <p>Loading approved client testimonials…</p>
@@ -677,26 +277,17 @@ Share your experience →
 <article class="testimonial dark">
 <b class="quote">+</b>
 <h3>Be our next success story.</h3>
-<p>
-Have worked with SBY? Share your experience and, with your permission, your testimonial can be featured here.
-</p>
+<p>Have worked with SBY? Share your experience and, with your permission, your testimonial can be featured here.</p>
 <a href="#testimonial-form">Submit a testimonial →</a>
 </article>
-
 </div>
-
 </div>
 
 <div class="testimonial-controls">
-
 <button type="button" class="testimonial-arrow" id="testimonialPrev" aria-label="Previous testimonial">‹</button>
-
 <div class="testimonial-dots" id="testimonialDots" aria-label="Testimonial navigation"></div>
-
 <button type="button" class="testimonial-arrow" id="testimonialNext" aria-label="Next testimonial">›</button>
-
 </div>
-
 </div>
 </div>
 </section>
@@ -706,78 +297,35 @@ Have worked with SBY? Share your experience and, with your permission, your test
 
 <div>
 <div class="eyebrow">FAQ</div>
-<h2>
-Questions?<br>
-<span>Let's make it clear.</span>
-</h2>
+<h2>Questions?<br><span>Let's make it clear.</span></h2>
 </div>
 
 <div>
-
 <details>
 <summary>Who do you provide services for?</summary>
-<p>
-SBY serves small businesses, professionals, and online sellers who need remote bookkeeping, accounting, tax, payroll, and business support.
-</p>
+<p>SBY serves small businesses, professionals, and online sellers who need remote bookkeeping, accounting, tax, payroll, and business support.</p>
 </details>
 
 <details>
 <summary>Can everything be handled remotely?</summary>
-<p>
-SBY is designed around remote workflows, including online communication and online filekeeping.
-</p>
+<p>SBY is designed around remote workflows, including online communication and online filekeeping.</p>
 </details>
 
 <details>
 <summary>What services do you provide?</summary>
-<p>
-SBY provides tax return computation and filing, tax consultancy and advisory, financial statement preparation, business registration, business retirement, and comprehensive payroll processing.
-</p>
+<p>SBY provides tax return computation and filing, tax consultancy and advisory, financial statement preparation, business registration, business retirement, and comprehensive payroll processing.</p>
 </details>
 
 <details>
 <summary>Can I inquire before deciding?</summary>
-<p>
-Yes. Use the inquiry form to describe your needs and we'll use your information to start the conversation.
-</p>
+<p>Yes. Use the inquiry form to describe your needs and we'll use your information to start the conversation.</p>
 </details>
 
 <details>
 <summary>Can clients submit testimonials?</summary>
-<p>
-Yes. Testimonial submissions are sent to SBY for review before publication.
-</p>
+<p>Yes. Testimonial submissions are sent to SBY for review before publication.</p>
 </details>
-
 </div>
-</div>
-</section>
-
-<section id="government" class="section government-section">
-<div class="wrap">
-
-<div class="heading">
-<div>
-<div class="eyebrow">GOVERNMENT COMPLIANCE</div>
-<h2>
-Government requirements,<br>
-<span>organized in one place.</span>
-</h2>
-</div>
-
-<p>
-Access current government compliance information maintained through the SBY Government Compliance database.
-</p>
-</div>
-
-<div id="governmentAgencies" class="government-agencies">
-<div class="government-loading">Loading government agencies...</div>
-</div>
-
-<div id="governmentTabs" class="government-tabs"></div>
-
-<div id="governmentPanels" class="government-panel"></div>
-
 </div>
 </section>
 
@@ -786,14 +334,8 @@ Access current government compliance information maintained through the SBY Gove
 
 <div>
 <div class="eyebrow orange">LET'S TALK</div>
-
-<h2>
-Ready to get your business <em>in order?</em>
-</h2>
-
-<p>
-Tell us what your business needs. Submit an inquiry and we'll get back to you through email.
-</p>
+<h2>Ready to get your business <em>in order?</em></h2>
+<p>Tell us what your business needs. Submit an inquiry and we'll get back to you through email.</p>
 
 <div class="contact-info">
 <a href="mailto:sbyacctg@gmail.com">sbyacctg@gmail.com</a>
@@ -803,25 +345,10 @@ Tell us what your business needs. Submit an inquiry and we'll get back to you th
 
 <form id="inquiryForm" method="POST" target="inquiryFrame" novalidate>
 
-<label>
-Full name
-<input name="name" required>
-</label>
-
-<label>
-Business name
-<input name="business">
-</label>
-
-<label>
-Email address
-<input name="email" type="email" required>
-</label>
-
-<label>
-Contact No.
-<input name="contact" type="tel" autocomplete="tel">
-</label>
+<label>Full name<input name="name" required></label>
+<label>Business name<input name="business"></label>
+<label>Email address<input name="email" type="email" required></label>
+<label>Contact No.<input name="contact" type="tel" autocomplete="tel"></label>
 
 <label>
 Services needed
@@ -838,17 +365,10 @@ Services needed
 </select>
 </label>
 
-<label>
-Message
-<textarea name="message" rows="5" required></textarea>
-</label>
+<label>Message<textarea name="message" rows="5" required></textarea></label>
 
-<button class="btn orange-btn" type="submit">
-Send Inquiry →
-</button>
-
+<button class="btn orange-btn" type="submit">Send Inquiry →</button>
 <small id="inquiryStatus" class="inquiry-status" role="status" aria-live="polite"></small>
-
 </form>
 
 <iframe name="inquiryFrame" id="inquiryFrame" class="inquiry-frame" title="Inquiry submission"></iframe>
@@ -861,69 +381,38 @@ Send Inquiry →
 
 <div>
 <div class="eyebrow">FOR EXISTING CLIENTS</div>
-
-<h2>
-Share your <span>experience.</span>
-</h2>
-
-<p>
-Thank you for your feedback. Submit your testimonial below. It will be sent to SBY for review before publication.
-</p>
+<h2>Share your <span>experience.</span></h2>
+<p>Thank you for your feedback. Submit your testimonial below. It will be sent to SBY for review before publication.</p>
 </div>
 
 <form id="testimonialForm" novalidate>
-
-<label>
-Name
-<input name="client_name" required>
-</label>
-
-<label>
-Business / role
-<input name="client_business">
-</label>
-
-<label>
-Email
-<input name="client_email" type="email" required>
-</label>
-
-<label>
-Your testimonial
-<textarea name="testimonial" rows="6" required></textarea>
-</label>
+<label>Name<input name="client_name" required></label>
+<label>Business / role<input name="client_business"></label>
+<label>Email<input name="client_email" type="email" required></label>
+<label>Your testimonial<textarea name="testimonial" rows="6" required></textarea></label>
 
 <label class="check">
 <input type="checkbox" name="permission" value="I give permission for SBY Bookkeeping Services to publish this testimonial on its website." required>
-<span>
-I give permission for SBY Bookkeeping Services to publish this testimonial on its website.
-</span>
+<span>I give permission for SBY Bookkeeping Services to publish this testimonial on its website.</span>
 </label>
 
-<button class="btn primary" type="submit">
-Submit Testimonial →
-</button>
-
+<button class="btn primary" type="submit">Submit Testimonial →</button>
 <small id="testimonialStatus" role="status" aria-live="polite"></small>
-
 </form>
+
 </div>
 </section>
 
 </main>
 
 <footer>
-
 <div class="wrap foot">
 
 <div>
 <a class="brand" href="#home">
 <img class="brand-logo footer-logo" src="SBY%20Bookkeeping%20Services%20Logo.jpeg" alt="SBY Bookkeeping Services">
 </a>
-
-<p>
-Remote bookkeeping and accounting support for modern businesses.
-</p>
+<p>Remote bookkeeping and accounting support for modern businesses.</p>
 </div>
 
 <div>
@@ -943,87 +432,84 @@ Remote bookkeeping and accounting support for modern businesses.
 <div class="wrap copyright">
 © <span id="year"></span> SBY Bookkeeping Services. All rights reserved.
 </div>
-
 </footer>
 
 <script src="script.js"></script>
 
 <script>
 (function(){
-  const list = document.getElementById('testimonialList');
-  const prev = document.getElementById('testimonialPrev');
-  const next = document.getElementById('testimonialNext');
-  const dots = document.getElementById('testimonialDots');
+  const list=document.getElementById('testimonialList');
+  const prev=document.getElementById('testimonialPrev');
+  const next=document.getElementById('testimonialNext');
+  const dots=document.getElementById('testimonialDots');
 
-  if(!list || !prev || !next || !dots) return;
+  if(!list||!prev||!next||!dots)return;
 
-  let current = 0;
-  let timer = null;
+  let current=0;
+  let timer=null;
 
-  function getSlides(){
-    return Array.from(list.querySelectorAll('.testimonial'));
-  }
+  const slides=()=>Array.from(list.querySelectorAll('.testimonial'));
 
   function render(){
-    const slides = getSlides();
+    const items=slides();
+    if(!items.length)return;
 
-    if(!slides.length) return;
+    current=Math.max(0,Math.min(current,items.length-1));
 
-    current = Math.max(0,Math.min(current,slides.length - 1));
-
-    slides.forEach((slide,index)=>{
-      slide.classList.toggle('carousel-active',index === current);
+    items.forEach((item,index)=>{
+      item.classList.toggle('carousel-active',index===current);
     });
 
-    dots.innerHTML = slides.map((slide,index)=>{
-      return '<button type="button" class="testimonial-dot' +
-        (index === current ? ' active' : '') +
-        '" aria-label="Go to testimonial ' + (index + 1) +
-        '" data-index="' + index + '"></button>';
-    }).join('');
+    dots.innerHTML=items.map((item,index)=>
+      '<button type="button" class="testimonial-dot'+
+      (index===current?' active':'')+
+      '" aria-label="Go to testimonial '+(index+1)+
+      '" data-index="'+index+'"></button>'
+    ).join('');
 
     dots.querySelectorAll('.testimonial-dot').forEach(dot=>{
-      dot.addEventListener('click',()=>{
-        current = Number(dot.dataset.index);
+      dot.onclick=()=>{
+        current=Number(dot.dataset.index);
         render();
         restart();
-      });
+      };
     });
 
-    const multiple = slides.length > 1;
-
-    prev.style.display = multiple ? 'flex' : 'none';
-    next.style.display = multiple ? 'flex' : 'none';
-    dots.style.display = multiple ? 'flex' : 'none';
-  }
-
-  function move(direction){
-    const slides = getSlides();
-
-    if(slides.length < 2) return;
-
-    current = (current + direction + slides.length) % slides.length;
-
-    render();
-    restart();
+    const multiple=items.length>1;
+    prev.style.display=multiple?'flex':'none';
+    next.style.display=multiple?'flex':'none';
+    dots.style.display=multiple?'flex':'none';
   }
 
   function restart(){
     clearInterval(timer);
 
-    if(getSlides().length > 1){
-      timer = setInterval(()=>{
-        current = (current + 1) % getSlides().length;
+    if(slides().length>1){
+      timer=setInterval(()=>{
+        current=(current+1)%slides().length;
         render();
       },6000);
     }
   }
 
-  prev.addEventListener('click',()=>move(-1));
-  next.addEventListener('click',()=>move(1));
+  prev.onclick=()=>{
+    const count=slides().length;
+    if(count<2)return;
+    current=(current-1+count)%count;
+    render();
+    restart();
+  };
+
+  next.onclick=()=>{
+    const count=slides().length;
+    if(count<2)return;
+    current=(current+1)%count;
+    render();
+    restart();
+  };
 
   new MutationObserver(()=>{
-    current = 0;
+    current=0;
     render();
     restart();
   }).observe(list,{childList:true,subtree:true});
@@ -1031,325 +517,72 @@ Remote bookkeeping and accounting support for modern businesses.
   render();
   restart();
 })();
+</script>
 
+<script>
 (function(){
-  const form = document.getElementById('inquiryForm');
-  const frame = document.getElementById('inquiryFrame');
-  const status = document.getElementById('inquiryStatus');
+  const form=document.getElementById('inquiryForm');
+  const frame=document.getElementById('inquiryFrame');
+  const status=document.getElementById('inquiryStatus');
+  const api='https://script.google.com/macros/s/AKfycbxuv0zOPHt0QGkMnnLwlrZKf9N5ohg_OpD7lM_8LftOWdA8cLwxzV3LRrydI40MQRSC/exec';
 
-  const api = 'https://script.google.com/macros/s/AKfycbxuv0zOPHt0QGkMnnLwlrZKf9N5ohg_OpD7lM_8LftOWdA8cLwxzV3LRrydI40MQRSC/exec';
+  if(!form||!frame||!status)return;
 
-  if(!form || !frame || !status) return;
+  form.action=api;
 
-  form.action = api;
+  let submitting=false;
+  let timeout=null;
 
-  let submitting = false;
-  let timeout = null;
-
-  form.addEventListener('submit',function(e){
+  form.addEventListener('submit',event=>{
     if(submitting){
-      e.preventDefault();
+      event.preventDefault();
       return;
     }
 
     if(!form.checkValidity()){
-      e.preventDefault();
+      event.preventDefault();
       form.reportValidity();
       return;
     }
 
-    const button = form.querySelector('button[type="submit"]');
+    const button=form.querySelector('button[type="submit"]');
 
-    submitting = true;
-    button.disabled = true;
-    button.textContent = 'Sending...';
-
-    status.className = 'inquiry-status';
-    status.textContent = '';
+    submitting=true;
+    button.disabled=true;
+    button.textContent='Sending...';
+    status.className='inquiry-status';
+    status.textContent='';
 
     clearTimeout(timeout);
 
-    timeout = setTimeout(function(){
-      if(!submitting) return;
+    timeout=setTimeout(()=>{
+      if(!submitting)return;
 
-      submitting = false;
-      button.disabled = false;
-      button.textContent = 'Send Inquiry →';
-
-      status.className = 'inquiry-status error';
-      status.textContent = 'Unable to confirm your inquiry. Please try again or contact us directly.';
+      submitting=false;
+      button.disabled=false;
+      button.textContent='Send Inquiry →';
+      status.className='inquiry-status error';
+      status.textContent='Unable to confirm your inquiry. Please try again or contact us directly.';
     },10000);
   });
 
-  frame.addEventListener('load',function(){
-    if(!submitting) return;
+  frame.addEventListener('load',()=>{
+    if(!submitting)return;
 
     clearTimeout(timeout);
 
-    setTimeout(function(){
-      submitting = false;
+    setTimeout(()=>{
+      submitting=false;
 
-      const button = form.querySelector('button[type="submit"]');
+      const button=form.querySelector('button[type="submit"]');
 
       form.reset();
+      button.disabled=false;
+      button.textContent='Send Inquiry →';
 
-      button.disabled = false;
-      button.textContent = 'Send Inquiry →';
-
-      status.className = 'inquiry-status success';
-      status.textContent = 'Thank you. Your inquiry has been submitted successfully.';
+      status.className='inquiry-status success';
+      status.textContent='Thank you. Your inquiry has been submitted successfully.';
     },500);
-  });
-})();
-
-(function(){
-  const api = 'https://script.google.com/macros/s/AKfycbwUAu9vc-vp0KIzSZA125Z_iWYWC95-wmJCJWj1vtMzzDfErvSTAyE2HibXudR57A7Y/exec';
-
-  const agencies = document.getElementById('governmentAgencies');
-  const tabs = document.getElementById('governmentTabs');
-  const panels = document.getElementById('governmentPanels');
-
-  if(!agencies || !tabs || !panels) return;
-
-  const order = [
-    'Government',
-    'BIR Deadlines',
-    'BIR RRs',
-    'BIR RMCs',
-    'BIR RMOs',
-    'Tax Tables',
-    'SSS',
-    'Pag-IBIG',
-    'PhilHealth',
-    'SEC'
-  ];
-
-  let data = {};
-  let current = 'BIR Deadlines';
-
-  function escapeHtml(value){
-    return String(value ?? '').replace(/[&<>"']/g,function(char){
-      return {
-        '&':'&amp;',
-        '<':'&lt;',
-        '>':'&gt;',
-        '"':'&quot;',
-        "'":'&#039;'
-      }[char];
-    });
-  }
-
-  function resolveAssetUrl(value){
-    const raw = String(value ?? '').trim();
-
-    if(!raw) return '';
-
-    try{
-      return new URL(raw,window.location.origin).href;
-    }catch(error){
-      return raw;
-    }
-  }
-
-  function linkHtml(url,label){
-    const value = String(url ?? '').trim();
-
-    if(!value) return '';
-
-    return '<a class="government-link" href="' +
-      escapeHtml(value) +
-      '" target="_blank" rel="noopener">' +
-      escapeHtml(label || 'View official source') +
-      ' →</a>';
-  }
-
-  function dateText(value){
-    if(!value) return '';
-
-    const d = new Date(value);
-
-    if(Number.isNaN(d.getTime())){
-      return escapeHtml(value);
-    }
-
-    return escapeHtml(
-      d.toLocaleDateString('en-PH',{
-        year:'numeric',
-        month:'long',
-        day:'numeric'
-      })
-    );
-  }
-
-  function renderAgencies(){
-    const rows = Array.isArray(data.Government)
-      ? data.Government
-      : [];
-
-    if(!rows.length){
-      agencies.innerHTML = '';
-      return;
-    }
-
-    agencies.innerHTML = rows.map(row=>{
-      const logo = resolveAssetUrl(row['LOGO URL']);
-      const name = String(row.AGENCY || row.TITLE || '').trim();
-
-      return '<div class="government-agency">' +
-        (logo
-          ? '<img class="government-agency-logo" src="' +
-            escapeHtml(logo) +
-            '" alt="' +
-            escapeHtml(name) +
-            ' logo" loading="lazy" onerror="this.style.display=\'none\'">'
-          : '') +
-        '<div class="government-agency-name">' +
-        escapeHtml(name) +
-        '</div>' +
-        '</div>';
-    }).join('');
-  }
-
-  function renderRow(sheet,row){
-    if(sheet === 'BIR Deadlines'){
-      return '<article class="government-item">' +
-        '<div class="government-item-top">' +
-        '<div>' +
-        '<h3>' +
-        escapeHtml(row.FORM || row.TITLE || '') +
-        '</h3>' +
-        '<p>' +
-        escapeHtml(row.DESCRIPTION || '') +
-        '</p>' +
-        '<div class="government-meta">' +
-        escapeHtml(row.PERIOD || '') +
-        (row['DUE DATE']
-          ? ' · Due ' + dateText(row['DUE DATE'])
-          : '') +
-        (row.FREQUENCY
-          ? ' · ' + escapeHtml(row.FREQUENCY)
-          : '') +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        linkHtml(row.URL,'Official source') +
-        '</article>';
-    }
-
-    if(['BIR RRs','BIR RMCs','BIR RMOs'].includes(sheet)){
-      return '<article class="government-item">' +
-        '<h3>' +
-        escapeHtml(row.ISSUANCE || '') +
-        '</h3>' +
-        '<p><strong>' +
-        escapeHtml(row.TITLE || '') +
-        '</strong></p>' +
-        '<p>' +
-        escapeHtml(row.DESCRIPTION || '') +
-        '</p>' +
-        '<div class="government-meta">' +
-        dateText(row.DATE) +
-        '</div>' +
-        linkHtml(row.URL,'Read issuance') +
-        '</article>';
-    }
-
-    return '<article class="government-item">' +
-      '<h3>' +
-      escapeHtml(row.TITLE || '') +
-      '</h3>' +
-      '<p>' +
-      escapeHtml(row.DESCRIPTION || '') +
-      '</p>' +
-      '<div class="government-meta">' +
-      escapeHtml(row.CATEGORY || row['TAX TYPE'] || '') +
-      (row['EFFECTIVE DATE']
-        ? ' · Effective ' + dateText(row['EFFECTIVE DATE'])
-        : '') +
-      (row['DUE DATE']
-        ? ' · Due ' + dateText(row['DUE DATE'])
-        : '') +
-      '</div>' +
-      linkHtml(row.URL,'Official source') +
-      '</article>';
-  }
-
-  function renderPanels(){
-    const rows = Array.isArray(data[current])
-      ? data[current]
-      : [];
-
-    panels.innerHTML =
-      '<div class="government-list">' +
-      (
-        rows.length
-          ? rows.map(row=>renderRow(current,row)).join('')
-          : '<article class="government-item"><p>No active records available.</p></article>'
-      ) +
-      '</div>';
-  }
-
-  function renderTabs(){
-    const available = order.filter(name=>{
-      return name !== 'Government' &&
-        Array.isArray(data[name]);
-    });
-
-    tabs.innerHTML = available.map(name=>{
-      return '<button type="button" class="government-tab' +
-        (name === current ? ' active' : '') +
-        '" data-government-tab="' +
-        escapeHtml(name) +
-        '">' +
-        escapeHtml(name) +
-        '</button>';
-    }).join('');
-
-    tabs.querySelectorAll('[data-government-tab]').forEach(button=>{
-      button.addEventListener('click',function(){
-        current = this.dataset.governmentTab;
-
-        tabs.querySelectorAll('.government-tab').forEach(item=>{
-          item.classList.remove('active');
-        });
-
-        this.classList.add('active');
-
-        renderPanels();
-      });
-    });
-  }
-
-  fetch(api,{
-    method:'GET',
-    cache:'no-store'
-  })
-  .then(response=>{
-    if(!response.ok){
-      throw new Error('Government API request failed.');
-    }
-
-    return response.json();
-  })
-  .then(result=>{
-    if(!result || !result.success){
-      throw new Error('Government data unavailable.');
-    }
-
-    data = result.data || {};
-
-    renderAgencies();
-    renderTabs();
-    renderPanels();
-  })
-  .catch(()=>{
-    agencies.innerHTML = '';
-    tabs.innerHTML = '';
-
-    panels.innerHTML =
-      '<div class="government-error">' +
-      'Government compliance information is temporarily unavailable.' +
-      '</div>';
   });
 })();
 </script>
